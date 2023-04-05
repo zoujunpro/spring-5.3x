@@ -16,17 +16,16 @@
 
 package org.springframework.context.annotation;
 
-import javax.annotation.PreDestroy;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator;
 import org.springframework.aop.framework.autoproxy.target.LazyInitTargetSourceCreator;
 import org.springframework.aop.target.AbstractBeanFactoryBasedTargetSource;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.event.ApplicationContextEvent;
+
+import javax.annotation.PreDestroy;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

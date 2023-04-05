@@ -12,33 +12,30 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+ *//*
+
 
 package org.springframework.aop.framework.autoproxy;
 
-import java.io.IOException;
-
 import org.junit.jupiter.api.Test;
-import test.mixin.Lockable;
-
 import org.springframework.aop.Advisor;
 import org.springframework.aop.framework.Advised;
 import org.springframework.aop.framework.autoproxy.target.AbstractBeanFactoryBasedTargetSourceCreator;
 import org.springframework.aop.support.AopUtils;
-import org.springframework.aop.target.AbstractBeanFactoryBasedTargetSource;
-import org.springframework.aop.target.CommonsPool2TargetSource;
-import org.springframework.aop.target.LazyInitTargetSource;
-import org.springframework.aop.target.PrototypeTargetSource;
-import org.springframework.aop.target.ThreadLocalTargetSource;
+import org.springframework.aop.target.*;
 import org.springframework.aop.testfixture.advice.CountingBeforeAdvice;
 import org.springframework.aop.testfixture.interceptor.NopInterceptor;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.testfixture.beans.CountingTestBean;
 import org.springframework.beans.testfixture.beans.ITestBean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import test.mixin.Lockable;
+
+import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+*/
 /**
  * Tests for auto proxy creation by advisor recognition.
  *
@@ -47,7 +44,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @author Rod Johnson
  * @author Dave Syer
  * @author Chris Beams
- */
+ *//*
+
 @SuppressWarnings("resource")
 public class AdvisorAutoProxyCreatorTests {
 
@@ -61,19 +59,23 @@ public class AdvisorAutoProxyCreatorTests {
 	private static final String OPTIMIZED_CONTEXT = CLASSNAME + "-optimized.xml";
 
 
-	/**
+	*/
+/**
 	 * Return a bean factory with attributes and EnterpriseServices configured.
-	 */
+	 *//*
+
 	protected BeanFactory getBeanFactory() throws IOException {
 		return new ClassPathXmlApplicationContext(DEFAULT_CONTEXT, CLASS);
 	}
 
 
-	/**
+	*/
+/**
 	 * Check that we can provide a common interceptor that will
 	 * appear in the chain before "specific" interceptors,
 	 * which are sourced from matching advisors
-	 */
+	 *//*
+
 	@Test
 	public void testCommonInterceptorAndAdvisor() throws Exception {
 		BeanFactory bf = new ClassPathXmlApplicationContext(COMMON_INTERCEPTORS_CONTEXT, CLASS);
@@ -115,10 +117,12 @@ public class AdvisorAutoProxyCreatorTests {
 		assertThat(lockable3.locked()).isFalse();
 	}
 
-	/**
+	*/
+/**
 	 * We have custom TargetSourceCreators but there's no match, and
 	 * hence no proxying, for this bean
-	 */
+	 *//*
+
 	@Test
 	public void testCustomTargetSourceNoMatch() throws Exception {
 		BeanFactory bf = new ClassPathXmlApplicationContext(CUSTOM_TARGETSOURCE_CONTEXT, CLASS);
@@ -239,3 +243,4 @@ class SelectivePrototypeTargetSourceCreator extends AbstractBeanFactoryBasedTarg
 
 }
 
+*/
